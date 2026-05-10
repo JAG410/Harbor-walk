@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<meta name="theme-color" content="#1B2A3A" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-title" content="Harbor Walk" />
+<meta name="mobile-web-app-capable" content="yes" />
+<title>The Harbor Walk Companion · Otterbein, Baltimore</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%231B2A3A'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='62' font-style='italic' text-anchor='middle' fill='%23C9A24A'%3EH%3C/text%3E%3C/svg%3E" />
+
+<style>
+  :root {
+    --paper: #F2EBDB;
+    --paper-deep: #E8DFC9;
+    --paper-shade: #DCD0B4;
+    --ink: #1B2A3A;
+    --ink-soft: #3A4A5C;
+    --ink-faded: #6B6354;
+    --oxblood: #7A2C2C;
+    --gold: #B68B36;
+    --gold-deep: #8A6818;
+    --teal: #2F5654;
+    --rule: #C7B790;
+    --shadow: rgba(27, 42, 58, 0.08);
+
+    --font-display: 'Fraunces', 'Times New Roman', serif;
+    --font-body: 'Manrope', 'Helvetica Neue', sans-serif;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+  html { -webkit-text-size-adjust: 100%; }
+
+  body {
+    font-family: var(--font-body);
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.55;
+    padding-bottom: env(safe-area-inset-bottom);
+    /* paper texture */
+    background-image:
+      radial-gradient(circle at 15% 20%, rgba(122,44,44,0.04) 0%, transparent 40%),
+      radial-gradient(circle at 85% 75%, rgba(47,86,84,0.05) 0%, transparent 45%),
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.1 0 0 0 0 0.08 0 0 0 0 0.05 0 0 0 0.08 0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  ::selection { background: var(--gold); color: var(--paper); }
+
+  /* ============ MASTHEAD ============ */
+  .masthead {
+    padding: clamp(1.5rem, 4vw, 3rem) clamp(1.25rem, 4vw, 2.5rem) 0;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: var(--font-body);
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--ink-faded);
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  .top-bar .vol { font-weight: 600; }
+  .top-bar .date { font-style: italic; letter-spacing: 0.1em; font-family: var(--font-display); text-transform: none; font-size: 0.85rem; }
+
+  .title-block {
+    text-align: center;
+    padding: clamp(1.5rem, 5vw, 3rem) 0 clamp(1rem, 3vw, 2rem);
+    border-bottom: 3px double var(--rule);
+    position: relative;
+  }
+
+  .eyebrow {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: clamp(0.95rem, 2.5vw, 1.15rem);
+    color: var(--oxblood);
+    letter-spacing: 0.04em;
+    margin-bottom: 0.35rem;
+  }
+
+  h1.title {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: clamp(2.5rem, 9vw, 5.5rem);
+    line-height: 0.95;
+    letter-spacing: -0.02em;
+    font-variation-settings: "opsz" 120, "SOFT" 30;
+    color: var(--ink);
+    margin-bottom: 0.4rem;
+  }
+  h1.title em {
+    font-style: italic;
+    color: var(--oxblood);
+    font-weight: 300;
+  }
+
+  .subtitle {
+    font-family: var(--font-display);
+    font-size: clamp(0.95rem, 2.2vw, 1.15rem);
+    color: var(--ink-soft);
+    font-style: italic;
+    font-weight: 300;
+    max-width: 36rem;
+    margin: 0.4rem auto 0;
+  }
+
+  .ornament {
+    display: flex; align-items: center; justify-content: center;
+    gap: 0.75rem;
+    margin: 1rem auto 0;
+    color: var(--gold-deep);
+  }
+  .ornament .line { width: 60px; height: 1px; background: var(--rule); }
+  .ornament .sym { font-family: var(--font-display); font-size: 1.2rem; }
+
+  /* ============ ORIENTATION CARD ============ */
+  .orientation {
+    max-width: 1200px;
+    margin: 2rem auto 0;
+    padding: 0 clamp(1.25rem, 4vw, 2.5rem);
+  }
+
+  .orient-card {
+    background: var(--paper-deep);
+    border: 1px solid var(--rule);
+    padding: clamp(1.5rem, 4vw, 2.5rem);
+    position: relative;
+    box-shadow: 0 2px 0 var(--paper-shade), 0 12px 28px -18px var(--shadow);
+  }
+  .orient-card::before, .orient-card::after {
+    content: ''; position: absolute; width: 14px; height: 14px;
+    border: 1px solid var(--gold-deep);
+  }
+  .orient-card::before { top: 8px; left: 8px; border-right: none; border-bottom: none; }
+  .orient-card::after { bottom: 8px; right: 8px; border-left: none; border-top: none; }
+
+  .orient-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    align-items: start;
+  }
+  @media (min-width: 720px) {
+    .orient-grid { grid-template-columns: 1.3fr 1fr; gap: 2.5rem; }
+  }
+
+  .orient-text h2 {
+    font-family: var(--font-display);
+    font-size: clamp(1.3rem, 3vw, 1.7rem);
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    margin-bottom: 0.6rem;
+    color: var(--ink);
+  }
+  .orient-text p {
+    font-size: 0.95rem;
+    color: var(--ink-soft);
+  }
+  .orient-text .first-line::first-letter {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 3.2em;
+    float: left;
+    line-height: 0.85;
+    padding: 0.1em 0.1em 0 0;
+    color: var(--oxblood);
+  }
+
+  .compass-list {
+    list-style: none;
+    border-left: 1px solid var(--rule);
+    padding-left: 1.25rem;
+  }
+  .compass-list li {
+    padding: 0.5rem 0;
+    border-bottom: 1px dotted var(--rule);
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+    font-size: 0.88rem;
+  }
+  .compass-list li:last-child { border-bottom: none; }
+  .compass-list .place {
+    font-family: var(--font-display);
+    font-style: italic;
+    color: var(--ink);
+  }
+  .compass-list .dist {
+    font-family: var(--font-body);
+    font-size: 0.78rem;
+    color: var(--gold-deep);
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+  }
+
+  /* ============ CONTROLS ============ */
+  .controls {
+    max-width: 1200px;
+    margin: 2.5rem auto 0;
+    padding: 0 clamp(1.25rem, 4vw, 2.5rem);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: linear-gradient(to bottom, var(--paper) 85%, transparent);
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+  .controls-inner {
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    padding: 1rem;
+    box-shadow: 0 8px 20px -14px var(--shadow);
+  }
+
+  .search-box {
+    position: relative;
+    margin-bottom: 0.85rem;
+  }
+  .search-box input {
+    width: 100%;
+    padding: 0.7rem 0.9rem 0.7rem 2.5rem;
+    border: 1px solid var(--rule);
+    background: var(--paper-deep);
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    color: var(--ink);
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .search-box input:focus { border-color: var(--gold); }
+  .search-box svg {
+    position: absolute;
+    left: 0.85rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--ink-faded);
+  }
+
+  .filter-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-bottom: 0.6rem;
+  }
+  .filter-row:last-child { margin-bottom: 0; }
+  .filter-label {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 0.85rem;
+    color: var(--ink-faded);
+    padding: 0.35rem 0.5rem 0.35rem 0;
+    margin-right: 0.25rem;
+    align-self: center;
+  }
+
+  .chip {
+    font-family: var(--font-body);
+    font-size: 0.78rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-weight: 500;
+    padding: 0.4rem 0.75rem;
+    border: 1px solid var(--rule);
+    background: var(--paper);
+    color: var(--ink-soft);
+    cursor: pointer;
+    transition: all 0.15s ease;
+    border-radius: 0;
+  }
+  .chip:hover { border-color: var(--ink); color: var(--ink); }
+  .chip.active {
+    background: var(--ink);
+    color: var(--paper);
+    border-color: var(--ink);
+  }
+  .chip.dog.active {
+    background: var(--oxblood);
+    border-color: var(--oxblood);
+  }
+  .chip.fav.active {
+    background: var(--gold);
+    border-color: var(--gold-deep);
+    color: var(--ink);
+  }
+
+  /* ============ RESULTS ============ */
+  .results-meta {
+    max-width: 1200px;
+    margin: 1rem auto 0;
+    padding: 0 clamp(1.25rem, 4vw, 2.5rem);
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 0.9rem;
+    color: var(--ink-faded);
+  }
+
+  .grid {
+    max-width: 1200px;
+    margin: 1rem auto 0;
+    padding: 0 clamp(1.25rem, 4vw, 2.5rem);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  @media (min-width: 640px) { .grid { grid-template-columns: 1fr 1fr; gap: 1.25rem; } }
+  @media (min-width: 1000px) { .grid { grid-template-columns: 1fr 1fr 1fr; } }
+
+  .card {
+    background: var(--paper-deep);
+    border: 1px solid var(--rule);
+    padding: 1.25rem 1.25rem 1rem;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .card:hover { transform: translateY(-2px); box-shadow: 0 14px 26px -18px var(--shadow); }
+
+  .card-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 0.6rem;
+    margin-bottom: 0.4rem;
+  }
+  .cat-tag {
+    font-family: var(--font-body);
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold-deep);
+    font-weight: 700;
+  }
+  .fav-btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    color: var(--ink-faded);
+    transition: color 0.2s;
+    font-size: 1.1rem;
+    line-height: 1;
+  }
+  .fav-btn:hover { color: var(--gold-deep); }
+  .fav-btn.active { color: var(--gold-deep); }
+
+  .card h3 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 1.3rem;
+    line-height: 1.15;
+    color: var(--ink);
+    margin-bottom: 0.35rem;
+    letter-spacing: -0.01em;
+  }
+  .card h3 .ital { font-style: italic; font-weight: 400; }
+
+  .card .meta {
+    font-family: var(--font-body);
+    font-size: 0.78rem;
+    color: var(--ink-faded);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 0.8rem;
+    margin-bottom: 0.65rem;
+    padding-bottom: 0.65rem;
+    border-bottom: 1px dotted var(--rule);
+  }
+  .card .meta span { display: inline-flex; align-items: center; gap: 0.3rem; }
+  .card .meta .walk { color: var(--teal); font-weight: 600; }
+  .card .meta .dog-pill {
+    background: var(--oxblood);
+    color: var(--paper);
+    font-size: 0.65rem;
+    padding: 0.1rem 0.4rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  .card .desc {
+    font-size: 0.88rem;
+    color: var(--ink-soft);
+    flex-grow: 1;
+    margin-bottom: 0.85rem;
+  }
+
+  .card .actions {
+    display: flex;
+    gap: 0.6rem;
+    align-items: center;
+    margin-top: auto;
+  }
+  .card .map-link {
+    font-family: var(--font-body);
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid var(--gold);
+    padding-bottom: 2px;
+    font-weight: 600;
+    transition: color 0.15s, border-color 0.15s;
+  }
+  .card .map-link:hover { color: var(--oxblood); border-color: var(--oxblood); }
+  .card .addr { font-size: 0.75rem; color: var(--ink-faded); font-style: italic; }
+
+  .no-results {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 3rem 1rem;
+    font-family: var(--font-display);
+    font-style: italic;
+    color: var(--ink-faded);
+    font-size: 1.1rem;
+  }
+
+  /* ============ FEATURE SECTIONS ============ */
+  .feature-section {
+    max-width: 1200px;
+    margin: 4rem auto 0;
+    padding: 0 clamp(1.25rem, 4vw, 2.5rem);
+  }
+
+  .section-head {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  .section-head .num {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 2.5rem;
+    color: var(--oxblood);
+    line-height: 1;
+    font-weight: 300;
+  }
+  .section-head h2 {
+    font-family: var(--font-display);
+    font-size: clamp(1.5rem, 4vw, 2.2rem);
+    font-weight: 500;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+    line-height: 1;
+  }
+  .section-head h2 em { font-style: italic; color: var(--ink-soft); }
+
+  .section-rule {
+    flex-grow: 1;
+    height: 1px;
+    background: var(--rule);
+  }
+
+  /* Bourdain spotlight */
+  .bourdain {
+    background: var(--ink);
+    color: var(--paper);
+    padding: clamp(2rem, 5vw, 3.5rem);
+    position: relative;
+    overflow: hidden;
+    background-image:
+      radial-gradient(circle at 85% 15%, rgba(182,139,54,0.18) 0%, transparent 50%),
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 0.95 0 0 0 0 0.85 0 0 0 0.04 0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  .bourdain-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    align-items: center;
+  }
+  @media (min-width: 800px) {
+    .bourdain-grid { grid-template-columns: 1fr 1.5fr; gap: 3rem; }
+  }
+
+  .bourdain-mark {
+    text-align: center;
+    padding: 1.5rem;
+    border: 1px solid rgba(182,139,54,0.3);
+    position: relative;
+  }
+  .bourdain-mark::before {
+    content: '"';
+    font-family: var(--font-display);
+    font-size: 8rem;
+    color: var(--gold);
+    line-height: 1;
+    opacity: 0.25;
+    position: absolute;
+    top: -1rem;
+    left: 1rem;
+  }
+  .bourdain-mark .addr-big {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 1.6rem;
+    color: var(--gold);
+    margin-bottom: 0.3rem;
+  }
+  .bourdain-mark .meta-line {
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--paper-shade);
+    opacity: 0.7;
+  }
+
+  .bourdain-text h3 {
+    font-family: var(--font-display);
+    font-size: clamp(1.5rem, 3.5vw, 2rem);
+    font-weight: 400;
+    line-height: 1.15;
+    margin-bottom: 1rem;
+    color: var(--paper);
+  }
+  .bourdain-text h3 em { color: var(--gold); font-style: italic; }
+  .bourdain-text p {
+    font-size: 0.95rem;
+    color: var(--paper-shade);
+    margin-bottom: 0.85rem;
+    line-height: 1.65;
+  }
+  .bourdain-text p:last-child { margin-bottom: 0; }
+
+  /* Loops */
+  .loops-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  @media (min-width: 800px) { .loops-grid { grid-template-columns: 1fr 1fr 1fr; } }
+
+  .loop-card {
+    background: var(--paper-deep);
+    border: 1px solid var(--rule);
+    padding: 1.5rem;
+    position: relative;
+    counter-reset: step;
+  }
+  .loop-card .loop-num {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 3rem;
+    color: var(--gold-deep);
+    line-height: 1;
+    opacity: 0.5;
+    position: absolute;
+    top: 0.8rem;
+    right: 1.2rem;
+  }
+  .loop-card h3 {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin-bottom: 0.2rem;
+    padding-right: 2rem;
+  }
+  .loop-card .duration {
+    font-family: var(--font-body);
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--oxblood);
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+  .loop-card ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .loop-card ol li {
+    position: relative;
+    padding-left: 2rem;
+    padding-bottom: 0.7rem;
+    font-size: 0.88rem;
+    color: var(--ink-soft);
+    border-left: 1px dashed var(--rule);
+    margin-left: 0.5rem;
+  }
+  .loop-card ol li:last-child { padding-bottom: 0; border-left: 1px dashed transparent; }
+  .loop-card ol li::before {
+    counter-increment: step;
+    content: counter(step);
+    position: absolute;
+    left: -0.65rem;
+    top: 0;
+    width: 1.3rem;
+    height: 1.3rem;
+    background: var(--paper);
+    border: 1px solid var(--gold-deep);
+    border-radius: 50%;
+    color: var(--gold-deep);
+    font-family: var(--font-display);
+    font-size: 0.75rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* ============ FOOTER ============ */
+  footer {
+    max-width: 1200px;
+    margin: 5rem auto 0;
+    padding: 2.5rem clamp(1.25rem, 4vw, 2.5rem);
+    border-top: 3px double var(--rule);
+    text-align: center;
+    font-family: var(--font-display);
+    color: var(--ink-faded);
+    font-style: italic;
+  }
+  footer p { font-size: 0.9rem; margin-bottom: 0.3rem; }
+  footer .from {
+    font-family: var(--font-body);
+    font-style: normal;
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold-deep);
+    margin-top: 0.8rem;
+    font-weight: 600;
+  }
+
+  /* Install hint */
+  .install-hint {
+    position: fixed;
+    bottom: 1rem;
+    left: 1rem;
+    right: 1rem;
+    background: var(--ink);
+    color: var(--paper);
+    padding: 0.85rem 1rem;
+    font-size: 0.8rem;
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.8rem;
+    z-index: 100;
+    box-shadow: 0 8px 24px -8px rgba(0,0,0,0.3);
+    border-left: 3px solid var(--gold);
+  }
+  .install-hint.show { display: flex; }
+  .install-hint .close {
+    background: transparent;
+    color: var(--paper-shade);
+    border: none;
+    cursor: pointer;
+    font-size: 1.3rem;
+    line-height: 1;
+    padding: 0.2rem 0.4rem;
+  }
+
+  /* fade-in on load */
+  .fade-in { animation: fade 0.6s ease both; }
+  @keyframes fade { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+</style>
+</head>
+<body>
+
+<!-- ============ MASTHEAD ============ -->
+<header class="masthead">
+  <div class="top-bar">
+    <span class="vol">Vol. I · No. 1</span>
+    <span class="date">A Companion Guide</span>
+    <span class="vol">21230</span>
+  </div>
+
+  <div class="title-block fade-in">
+    <div class="eyebrow">From 500 South Hanover Street</div>
+    <h1 class="title">The Harbor Walk <em>Companion</em></h1>
+    <p class="subtitle">A walking guide to the bars, dogs, parks, and history of Otterbein &amp; Federal Hill — compiled for the household.</p>
+    <div class="ornament">
+      <span class="line"></span><span class="sym">⚓</span><span class="line"></span>
+    </div>
+  </div>
+</header>
+
+<!-- ============ ORIENTATION ============ -->
+<section class="orientation">
+  <div class="orient-card fade-in">
+    <div class="orient-grid">
+      <div class="orient-text">
+        <h2>Where we stand</h2>
+        <p class="first-line">Otterbein is a compact historic rowhouse neighborhood between Hanover and Sharp, Barre and Henrietta — immediately southwest of the Inner Harbor. From the 500 block of South Hanover you are at the northern edge of Federal Hill, a short walk from both stadiums and the waterfront. Everything below is measured from Hanover &amp; Lee — the center of the block — and is walkable in flat, urban miles.</p>
+      </div>
+      <ul class="compass-list">
+        <li><span class="place">Federal Hill Park</span><span class="dist">0.3 mi · 8 min</span></li>
+        <li><span class="place">Inner Harbor Promenade</span><span class="dist">0.4 mi · 10 min</span></li>
+        <li><span class="place">M&amp;T Bank Stadium</span><span class="dist">0.3 mi · 7 min</span></li>
+        <li><span class="place">Camden Yards</span><span class="dist">0.4 mi · 10 min</span></li>
+        <li><span class="place">Cross Street Market</span><span class="dist">0.5 mi · 13 min</span></li>
+        <li><span class="place">Old Otterbein Church</span><span class="dist">0.2 mi · 5 min</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTROLS ============ -->
+<div class="controls">
+  <div class="controls-inner">
+    <div class="search-box">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+      <input id="search" type="text" placeholder="Search places, neighborhoods, notes…" />
+    </div>
+    <div class="filter-row" id="cat-filters">
+      <span class="filter-label">Category:</span>
+      <button class="chip active" data-cat="all">All</button>
+      <button class="chip" data-cat="bar">Bars</button>
+      <button class="chip" data-cat="dining">Dining</button>
+      <button class="chip" data-cat="pet">Pet Care</button>
+      <button class="chip" data-cat="park">Parks</button>
+      <button class="chip" data-cat="historic">Historic</button>
+      <button class="chip" data-cat="attraction">Attractions</button>
+    </div>
+    <div class="filter-row" id="time-filters">
+      <span class="filter-label">Walk:</span>
+      <button class="chip active" data-time="any">Any time</button>
+      <button class="chip" data-time="10">Under 10 min</button>
+      <button class="chip" data-time="15">Under 15 min</button>
+      <button class="chip" data-time="20">Under 20 min</button>
+    </div>
+    <div class="filter-row">
+      <span class="filter-label">Toggles:</span>
+      <button class="chip dog" id="dog-filter">🐾 Dog-friendly</button>
+      <button class="chip fav" id="fav-filter">★ Favorites</button>
+    </div>
+  </div>
+</div>
+
+<div class="results-meta" id="results-meta"></div>
+
+<!-- ============ GRID ============ -->
+<main class="grid" id="grid"></main>
+
+<!-- ============ BOURDAIN SPOTLIGHT ============ -->
+<section class="feature-section">
+  <div class="section-head">
+    <span class="num">I.</span>
+    <h2>Bourdain <em>Slept Here</em></h2>
+    <span class="section-rule"></span>
+  </div>
+  <div class="bourdain">
+    <div class="bourdain-grid">
+      <div class="bourdain-mark">
+        <div class="addr-big">519–521<br/>S Hanover</div>
+        <div class="meta-line">Northeast Corner · Hanover &amp; Lee</div>
+      </div>
+      <div class="bourdain-text">
+        <h3>The townhouse on the corner — <em>a one-minute walk from the front door.</em></h3>
+        <p>Anthony Bourdain cooked at Gianni's in Harborplace in the early 1980s and lived, by the best available reckoning, in the three-story, four-bathroom townhouse on the northeast corner of Hanover and Lee. The deed traces back to seafood restaurateur Brice Phillips.</p>
+        <p>The Otterbein Community Association's research — <em>Anthony Bourdain Slept Here</em> — lays out the case in detail. It is, effectively, on the block.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LOOPS ============ -->
+<section class="feature-section">
+  <div class="section-head">
+    <span class="num">II.</span>
+    <h2>Suggested <em>Loops</em></h2>
+    <span class="section-rule"></span>
+  </div>
+  <div class="loops-grid">
+
+    <div class="loop-card">
+      <span class="loop-num">i</span>
+      <h3>Morning Coffee &amp; Climb</h3>
+      <div class="duration">30–40 min · with dogs</div>
+      <ol>
+        <li>South on Hanover to Federal Hill Park; climb the hill, lap the summit.</li>
+        <li>Down to Little Havana or a Key Hwy café for coffee on the patio.</li>
+        <li>Inner Harbor promenade north, then back up Hanover.</li>
+      </ol>
+    </div>
+
+    <div class="loop-card">
+      <span class="loop-num">ii</span>
+      <h3>Evening on the Patio</h3>
+      <div class="duration">45–60 min · with meal</div>
+      <ol>
+        <li>Stroll south to Blue Agave or Sobo Café for dinner.</li>
+        <li>Loop home via Cross Street Market and S Charles.</li>
+        <li>0.5–1.0 mile round-trip; ample people-watching.</li>
+      </ol>
+    </div>
+
+    <div class="loop-card">
+      <span class="loop-num">iii</span>
+      <h3>Long Walk to Locust Point</h3>
+      <div class="duration">60–90 min · workout pace</div>
+      <ol>
+        <li>Through Federal Hill, south on Key Hwy toward Locust Point.</li>
+        <li>Off-leash time at Locust Point Dog Park, or daycare drop at Parkwood.</li>
+        <li>Drink at a Locust Point bar; walk home along the water.</li>
+      </ol>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <p>Compiled for the Johnson household — Otterbein, Baltimore.</p>
+  <p>Distances are approximate, measured from Hanover &amp; Lee. Always verify hours before walking over.</p>
+  <p class="from">Save this page · Add to Home Screen</p>
+</footer>
+
+<!-- ============ INSTALL HINT ============ -->
+<div class="install-hint" id="install-hint">
+  <span>📱 Tap <strong>Share → Add to Home Screen</strong> to install as an app.</span>
+  <button class="close" id="install-close" aria-label="Dismiss">×</button>
+</div>
+
+<script>
+/* ============================================================
+   DATA
+   ============================================================ */
+const PLACES = [
+  // BARS
+  { id:'cross-st-market', name:'Cross Street Market', cat:'bar', subcat:'Bar Cluster + Food Hall',
+    walk:13, distM:0.5, dog:false, addr:'1065 S Charles St, Baltimore, MD 21230',
+    desc:'Classic Federal Hill hub. Multiple bars and food stalls under one roof — good when tastes diverge in one stop.' },
+  { id:'banditos', name:'Banditos Bar + Kitchen', cat:'bar', subcat:'Mexican · Tequila',
+    walk:14, distM:0.55, dog:true, addr:'1118 S Charles St, Baltimore, MD 21230',
+    desc:'Tequila-forward and lively. Leashed dogs welcome on the patio. Solid before- or after-game stop.' },
+  { id:'blue-agave', name:'Blue Agave', cat:'bar', subcat:'Mezcal · Mexican',
+    walk:14, distM:0.6, dog:true, addr:'1032 Light St, Baltimore, MD 21230',
+    desc:'Mezcal and tequila program with serious margaritas. Patio is dog-friendly; atmosphere is lively without going off the rails.' },
+  { id:'mothers', name:"Mother's Federal Hill Grille", cat:'bar', subcat:'Sports Bar',
+    walk:14, distM:0.6, dog:true, addr:'1113 S Charles St, Baltimore, MD 21230',
+    desc:'The Federal Hill sports bar for Ravens and Orioles games. Patio is dog-friendly.' },
+  { id:'riverside-tap', name:'Riverside Taphouse', cat:'bar', subcat:'Craft Beer',
+    walk:17, distM:0.75, dog:true, addr:'1857 E Fort Ave, Baltimore, MD 21230',
+    desc:'Beer-focused neighborhood spot in Riverside. Dog-friendly patio.' },
+  { id:'capt-larrys', name:"Captain Larry's Bar & Grille", cat:'bar', subcat:'Neighborhood Bar',
+    walk:17, distM:0.7, dog:true, addr:'601 E Fort Ave, Baltimore, MD 21230',
+    desc:'Old-school neighborhood pub on Fort Ave. Casual, leashed dogs okay on the patio.' },
+
+  // DINING
+  { id:'sobo-cafe', name:'Sobo Café', cat:'dining', subcat:'Comfort Bistro',
+    walk:13, distM:0.55, dog:true, addr:'6 W Cross St, Baltimore, MD 21230',
+    desc:'Cozy and reliable. Good for date night or dinner with mom; outdoor area is dog-friendly.' },
+  { id:'little-havana', name:'Little Havana', cat:'dining', subcat:'Cuban · Waterfront',
+    walk:13, distM:0.55, dog:true, addr:'1325 Key Hwy, Baltimore, MD 21230',
+    desc:'Big harbor-side patio. A long-time Federal Hill favorite — water views, dog- and family-friendly.' },
+  { id:'rusty-scupper', name:'Rusty Scupper', cat:'dining', subcat:'Seafood · Harbor View',
+    walk:11, distM:0.4, dog:false, addr:'402 Key Hwy, Baltimore, MD 21230',
+    desc:'Seafood and full bar at the base of Federal Hill Park. Best for a harbor-view drink.' },
+  { id:'pub-dog', name:'Pub Dog Pizza & Drafthouse', cat:'dining', subcat:'Pizza · Locust Point',
+    walk:19, distM:0.95, dog:true, addr:'20 E Cross St, Baltimore, MD 21230',
+    desc:'Pizza and house beers in a casual setting. On the Dogs of Charm City patio list.' },
+
+  // PET CARE
+  { id:'citypets', name:'CityPets Veterinary Care', cat:'pet', subcat:'Vet · Walk-in',
+    walk:8, distM:0.28, dog:true, addr:'1212 S Charles St, Baltimore, MD 21230',
+    desc:'Full-service urban vet in Federal Hill. Highly regarded. Closest walking option for the household.' },
+  { id:'locust-pet-resort', name:'Locust Point Pet Resort', cat:'pet', subcat:'Daycare · Boarding',
+    walk:18, distM:0.9, dog:true, addr:'1624 Beason St, Baltimore, MD 21230',
+    desc:'Indoor/outdoor play spaces and a warm-weather pool. Daycare and overnight boarding — built for high-energy dogs.' },
+  { id:'howl-mchenry', name:'Howl', cat:'pet', subcat:'Pet Supplies',
+    walk:20, distM:1.05, dog:true, addr:'1719 Whetstone Way, Baltimore, MD 21230',
+    desc:'Independent pet shop at McHenry Row. Good food, gear, and treats; pair with errands at the rest of the complex.' },
+
+  // PARKS
+  { id:'fed-hill-park', name:'Federal Hill Park', cat:'park', subcat:'Hilltop · Leashed',
+    walk:9, distM:0.35, dog:true, addr:'300 Warren Ave, Baltimore, MD 21230',
+    desc:'Historic hilltop park with Inner Harbor views, grass, benches, and a playground. Leashed only — but the climb does the work.' },
+  { id:'harbor-promenade', name:'Inner Harbor Promenade', cat:'park', subcat:'Waterfront Path',
+    walk:10, distM:0.4, dog:true, addr:'301 Light St, Baltimore, MD 21230',
+    desc:'The long, flat waterfront walk. Best for distance, strollers, and multi-generation outings.' },
+  { id:'rash-field', name:'Rash Field Park', cat:'park', subcat:'Recreation · Renovating',
+    walk:11, distM:0.45, dog:true, addr:'201 Key Hwy, Baltimore, MD 21230',
+    desc:'Phase 2 renovations through 2026 add pickleball courts, lighting, and a kayak launch. Lively fitness hub on the harbor.' },
+  { id:'locust-dog-park', name:'Locust Point Dog Park', cat:'park', subcat:'Off-Leash',
+    walk:18, distM:0.9, dog:true, addr:'1442 Decatur St, Baltimore, MD 21230',
+    desc:'Dedicated off-leash dog park. Turf hill, water, benches. Worth the walk when the dogs need to run free.' },
+
+  // HISTORIC
+  { id:'bourdain-house', name:'Bourdain Townhouse', cat:'historic', subcat:'Personal History',
+    walk:1, distM:0.02, dog:true, addr:'519 S Hanover St, Baltimore, MD 21230',
+    desc:'Northeast corner of Hanover & Lee. Three stories, four bathrooms; tied to Brice Phillips. The most likely Bourdain residence during his Gianni\'s years.' },
+  { id:'otterbein-church', name:'Old Otterbein Church', cat:'historic', subcat:'1785 · Methodist',
+    walk:6, distM:0.25, dog:false, addr:'112 W Conway St, Baltimore, MD 21201',
+    desc:'Sanctuary dating to 1785 — the oldest continuously used church in Baltimore and the oldest building on its original foundation in the city.' },
+  { id:'needham-house', name:'Needham House', cat:'historic', subcat:'c. 1829 Rowhouse',
+    walk:3, distM:0.1, dog:false, addr:'604 S Hanover St, Baltimore, MD 21230',
+    desc:'One block south. Likely built 1829–1830 with a long, well-documented chain of ownership — a window into how early Hanover developed.' },
+
+  // ATTRACTIONS
+  { id:'mt-stadium', name:'M&T Bank Stadium', cat:'attraction', subcat:'Ravens · NFL',
+    walk:8, distM:0.35, dog:false, addr:'1101 Russell St, Baltimore, MD 21230',
+    desc:'Walkable on game days. Pre- and post-game patio energy spills back into Federal Hill.' },
+  { id:'camden-yards', name:'Oriole Park at Camden Yards', cat:'attraction', subcat:'Orioles · MLB',
+    walk:10, distM:0.4, dog:false, addr:'333 W Camden St, Baltimore, MD 21201',
+    desc:'Iconic ballpark, an easy walk from the block. Trade off who holds leashes for the dog-friendly patios after.' },
+  { id:'science-center', name:'Maryland Science Center', cat:'attraction', subcat:'Family · Museum',
+    walk:11, distM:0.45, dog:false, addr:'601 Light St, Baltimore, MD 21230',
+    desc:'Inner Harbor staple. Reliable multi-generational option, especially for visitors.' },
+  { id:'national-aquarium', name:'National Aquarium', cat:'attraction', subcat:'Family · Museum',
+    walk:15, distM:0.65, dog:false, addr:'501 E Pratt St, Baltimore, MD 21202',
+    desc:'Across the harbor on the promenade. Iconic Baltimore stop — works for out-of-town guests.' },
+];
+
+const CAT_LABELS = {
+  bar: 'Bars & Breweries',
+  dining: 'Dining & Patios',
+  pet: 'Pet Care',
+  park: 'Parks & Walks',
+  historic: 'Historic',
+  attraction: 'Attractions'
+};
+
+/* ============================================================
+   STATE
+   ============================================================ */
+let state = {
+  cat: 'all',
+  time: 'any',
+  dog: false,
+  fav: false,
+  q: ''
+};
+
+const favKey = 'harborwalk_favs_v1';
+let favs = new Set(JSON.parse(localStorage.getItem(favKey) || '[]'));
+
+/* ============================================================
+   RENDER
+   ============================================================ */
+const grid = document.getElementById('grid');
+const meta = document.getElementById('results-meta');
+
+function fmtMiles(m) {
+  if (m < 0.1) return '< 0.1 mi';
+  return m.toFixed(1) + ' mi';
+}
+
+function renderCard(p) {
+  const isFav = favs.has(p.id);
+  const mapsUrl = 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(p.name + ', ' + p.addr);
+  return `
+    <article class="card" data-id="${p.id}">
+      <div class="card-head">
+        <span class="cat-tag">${p.subcat}</span>
+        <button class="fav-btn ${isFav ? 'active' : ''}" data-fav="${p.id}" aria-label="Toggle favorite">${isFav ? '★' : '☆'}</button>
+      </div>
+      <h3>${p.name}</h3>
+      <div class="meta">
+        <span class="walk">↺ ${p.walk} min</span>
+        <span>· ${fmtMiles(p.distM)}</span>
+        ${p.dog ? '<span class="dog-pill">Dog-friendly</span>' : ''}
+      </div>
+      <p class="desc">${p.desc}</p>
+      <div class="actions">
+        <a class="map-link" href="${mapsUrl}" target="_blank" rel="noopener">Open in Maps →</a>
+      </div>
+    </article>
+  `;
+}
+
+function applyFilters() {
+  const q = state.q.trim().toLowerCase();
+  const timeMax = state.time === 'any' ? Infinity : parseInt(state.time, 10);
+
+  const filtered = PLACES.filter(p => {
+    if (state.cat !== 'all' && p.cat !== state.cat) return false;
+    if (p.walk > timeMax) return false;
+    if (state.dog && !p.dog) return false;
+    if (state.fav && !favs.has(p.id)) return false;
+    if (q) {
+      const hay = (p.name + ' ' + p.subcat + ' ' + p.desc + ' ' + p.addr).toLowerCase();
+      if (!hay.includes(q)) return false;
+    }
+    return true;
+  }).sort((a, b) => a.walk - b.walk);
+
+  meta.textContent = filtered.length === 1
+    ? '1 place found · sorted by walking distance'
+    : `${filtered.length} places found · sorted by walking distance`;
+
+  if (filtered.length === 0) {
+    grid.innerHTML = '<div class="no-results">Nothing matches — adjust the filters above.</div>';
+  } else {
+    grid.innerHTML = filtered.map(renderCard).join('');
+  }
+}
+
+/* ============================================================
+   EVENTS
+   ============================================================ */
+document.getElementById('cat-filters').addEventListener('click', e => {
+  const btn = e.target.closest('.chip');
+  if (!btn) return;
+  state.cat = btn.dataset.cat;
+  document.querySelectorAll('#cat-filters .chip').forEach(c => c.classList.toggle('active', c === btn));
+  applyFilters();
+});
+
+document.getElementById('time-filters').addEventListener('click', e => {
+  const btn = e.target.closest('.chip');
+  if (!btn) return;
+  state.time = btn.dataset.time;
+  document.querySelectorAll('#time-filters .chip').forEach(c => c.classList.toggle('active', c === btn));
+  applyFilters();
+});
+
+document.getElementById('dog-filter').addEventListener('click', e => {
+  state.dog = !state.dog;
+  e.currentTarget.classList.toggle('active', state.dog);
+  applyFilters();
+});
+
+document.getElementById('fav-filter').addEventListener('click', e => {
+  state.fav = !state.fav;
+  e.currentTarget.classList.toggle('active', state.fav);
+  applyFilters();
+});
+
+document.getElementById('search').addEventListener('input', e => {
+  state.q = e.target.value;
+  applyFilters();
+});
+
+grid.addEventListener('click', e => {
+  const favBtn = e.target.closest('[data-fav]');
+  if (!favBtn) return;
+  const id = favBtn.dataset.fav;
+  if (favs.has(id)) favs.delete(id); else favs.add(id);
+  localStorage.setItem(favKey, JSON.stringify([...favs]));
+  applyFilters();
+});
+
+/* ============================================================
+   INSTALL HINT (iOS Safari Add-to-Home)
+   ============================================================ */
+(function () {
+  const hint = document.getElementById('install-hint');
+  const close = document.getElementById('install-close');
+  const dismissedKey = 'harborwalk_install_dismissed_v1';
+  const isStandalone = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone;
+  const isiOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+
+  if (!isStandalone && isiOS && !localStorage.getItem(dismissedKey)) {
+    setTimeout(() => hint.classList.add('show'), 1800);
+  }
+  close.addEventListener('click', () => {
+    hint.classList.remove('show');
+    localStorage.setItem(dismissedKey, '1');
+  });
+})();
+
+/* initial render */
+applyFilters();
+</script>
+
+</body>
+</html>
